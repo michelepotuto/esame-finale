@@ -1,0 +1,21 @@
+Per sviluppare la mia app ho utilizzato React per il front-end, e node + mysql per il back-end. E' possibile accedervi soltanto tramite codice cliente, 
+e una volta effettuato il login verrà visualizzata la navbar, con le navigazioni disponibili, e la home con la lista totale dei biglietti e un filtro
+di ricerca. Sarà possibile mettere i biglietti nel carrello tramite apposito tasto, e successivamente gestire il proprio carrello (diminuire, aumentare,
+rimuovere e visualizzare il prezzo totale) o pagare. Il login persiste nel session storage finchè non verrà effettuato il logout, tramite apposito tasto
+sulla navbar. 
+Per la UI ho utilizzato principalmente bootstrap, e react-bootstrap per la navbar. 
+Per connettermi al DB ho utilizzato node.js, con Axios e Express per api e chiamate http.
+Ho scelto di utilizzare un context per gestire lo state di login e renderlo persistente, 
+Ho scelto di utilizzare redux per la gestione del carrello, lo trovo molto comodo per gestire tutte le variazioni di state di cui necessita. Ho trovato
+alcune difficoltà nella risoluzione di alcuni bug nel filtro dei biglietti (risolti), e nell' incremento e diminuzione dei prodotti nel carrello, che mi 
+hanno portato via un po' di tempo. 
+Sono riuscito a 
+risolverli tranne 2: 
+1) Quando aggiungo biglietti al carrello fino a superare la quantità massima, il pop-up di alert funziona, ma incrementa comunque
+l' oggetto. Questa funzione è gestita da un if-else, ma non sono riuscito a trovare l' errore.
+2) Quando decremento i biglietti dal carrello, la quantità visualizzata non si aggiorna in tempo reale (ma funziona, perchè nel session storage viene
+visualizzata la quantità corretta)
+Il DB è strutturato come richiesto nella traccia, con una sola modifica: ho aggiunto una colonna alla tabella "biglietto", che indica la quantità di 
+biglietti presenti nel carrello. E' una soluzione che ho trovato per riuscire a visualizzare correttamente la quantità, e il totale del prezzo.
+
+
